@@ -1,1 +1,31 @@
+def guess_number():
+    print("Загадай число от 1 до 100, и я постараюсь его угадать!")
+    
+    low = 1
+    high = 100
+    attempts = 0
+
+    while low <= high:
+        attempts += 1
+        guess = (low + high) // 2
+        print(f"Твоё число равно, меньше или больше, чем {guess}?")
+        print("1 - равно")
+        print("2 - больше")
+        print("3 - меньше")
+        
+        response = int(input("Введите ваш ответ (1, 2 или 3): "))
+        
+        if response == 1:
+            print(f"Ура! Я угадал твоё число {guess} за {attempts} попыток.")
+            break
+        elif response == 2:
+            low = guess + 1  # Увеличиваем нижнюю границу
+        elif response == 3:
+            high = guess - 1  # Уменьшаем верхнюю границу
+        else:
+            print("Некорректный ввод. Пожалуйста, введите 1, 2 или 3.")
+
+guess_number()
+
+
 

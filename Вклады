@@ -1,1 +1,16 @@
+initial_deposit = float(input("Введите начальный вклад (X) в рублях: "))
+target_amount = float(input("Введите целевую сумму (Y) в рублях: "))
+interest_rate = float(input("Введите процент увеличения (P) в год: "))
+
+years = 0
+current_amount = initial_deposit
+
+while current_amount < target_amount:
+    current_amount += current_amount * (interest_rate / 100)
+    current_amount = int(current_amount)
+    years += 1
+
+print(f"Сумма достигнет значения {target_amount} рублей через {years} лет.")
+
+
 
